@@ -227,6 +227,8 @@ class PaiEasChatEndpoint(BaseChatModel):
                 f" and message {response.text}"
             )
 
+        return response.content  # Changed from response.text to response.content
+
         return response.text
 
     def _call_eas_stream(self, query_body: dict) -> Any:
